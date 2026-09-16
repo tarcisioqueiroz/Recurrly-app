@@ -2,10 +2,10 @@ import {View, Text} from "react-native"
 import {Link,useLocalSearchParams} from "expo-router"
 
 const SubscriptionsDetails = () => {
-    const { id } = useLocalSearchParams<{ id: String }>();
+    const { id } = useLocalSearchParams<{ id: string }>();
     return (
         <View>
-            <Tex>Subscriptions Details:? {id}</Tex>
+            <Text>Subscriptions Details:? {id}</Text>
             <Link href='/'>Go Back</Link>
         </View>
     )
