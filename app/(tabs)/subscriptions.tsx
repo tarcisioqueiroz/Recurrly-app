@@ -4,7 +4,7 @@ import {Link} from "expo-router"
 const Subscriptions = () => {
     return (
         <View>
-            <Tex>Subscriptions</Tex>
+            <Text>Subscriptions</Text>
         </View>
     )
 }

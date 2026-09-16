@@ -4,7 +4,7 @@ import {Link} from "expo-router"
 const Insights = () => {
     return (
         <View>
-            <Tex>Insights</Tex>
+            <Text>Insights</Text>
         </View>
     )
 }
