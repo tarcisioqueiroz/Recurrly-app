@@ -1,50 +1,95 @@
-# Welcome to your Expo app 👋
+<div align="center">
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# 💳 Recurrly
 
-## Get started
+**Todas as suas assinaturas em um só lugar.**
 
-1. Install dependencies
+App mobile para acompanhar serviços recorrentes (streaming, software, ferramentas), quanto cada um custa e quando vence a próxima cobrança.
 
-   ```bash
-   npm install
-   ```
+![Status](https://img.shields.io/badge/status-em_desenvolvimento-FFB020?style=flat-square)
+![React Native](https://img.shields.io/badge/React_Native_0.81-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![Expo](https://img.shields.io/badge/Expo_SDK_54-000020?style=flat-square&logo=expo&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![NativeWind](https://img.shields.io/badge/NativeWind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 
-2. Start the app
+</div>
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 📱 Sobre o projeto
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Quem assina vários serviços costuma perder o controle: esquece o que está pagando, quanto isso soma no mês e quando cada cobrança vai cair. O Recurrly resolve isso com uma visão única de todas as assinaturas, destacando as próximas renovações.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+O projeto está **em desenvolvimento**. A tela inicial está implementada com dados de exemplo, e as demais telas já existem na estrutura de rotas, prontas para receber as próximas funcionalidades.
 
-## Get a fresh project
+<!-- Adicione prints do app aqui, por exemplo:
+<p align="center">
+  <img src="docs/home.png" width="250" alt="Tela inicial" />
+</p>
+-->
 
-When you're ready, run:
+## ✨ Funcionalidades
 
-```bash
-npm run reset-project
+**Já implementado**
+
+- **Saldo e próxima renovação** em destaque no topo da tela inicial
+- **Próximas cobranças** em uma lista horizontal, com quantos dias faltam para cada uma
+- **Lista de assinaturas** com cards que se expandem ao toque, mostrando forma de pagamento, categoria, data de início, data de renovação e status
+- Formatação de moeda com `Intl.NumberFormat` e de datas com `dayjs`, com tratamento para dados ausentes
+- Estados vazios para quando não há assinaturas ou renovações
+
+**Próximos passos**
+
+- [ ] Telas de login e cadastro
+- [ ] Onboarding do primeiro acesso
+- [ ] Cadastro e edição de assinaturas
+- [ ] Tela de detalhes da assinatura
+- [ ] Insights de gastos por categoria e por mês
+- [ ] Persistência dos dados (hoje a tela usa dados de exemplo)
+- [ ] Notificações antes de cada renovação
+
+## 🛠️ Tecnologias
+
+| Tecnologia | Uso no projeto |
+| --- | --- |
+| **React Native + Expo (SDK 54)** | Base do app, com a New Architecture e o React Compiler habilitados |
+| **Expo Router** | Navegação baseada em arquivos, com grupos de rotas `(auth)` e `(tabs)`, rota dinâmica `subscriptions/[id]` e rotas tipadas |
+| **TypeScript** | Tipagem dos dados e das props dos componentes |
+| **NativeWind + Tailwind CSS** | Estilização com classes utilitárias e um tema próprio |
+| **dayjs** e **clsx** | Datas e classes condicionais |
+| **ESLint** | Padronização do código |
+| **CodeRabbit** | Revisão automatizada de pull requests com IA |
+
+## 📂 Estrutura
+
+```
+app/
+├── (auth)/              # Login e cadastro
+├── (tabs)/              # Abas: Home, Subscriptions, Insights, Settings
+├── subscriptions/[id]   # Detalhes de uma assinatura (rota dinâmica)
+├── onboarding.tsx
+└── _layout.tsx
+components/              # Componentes reutilizáveis (cards, títulos de lista)
+constants/               # Tema, ícones, imagens e dados de exemplo
+lib/util.ts              # Formatação de moeda, datas e status
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🚀 Como rodar
 
-## Learn more
+Pré-requisitos: [Node.js](https://nodejs.org/) LTS e o app [Expo Go](https://expo.dev/go) no celular (ou um emulador Android/iOS).
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+git clone https://github.com/tarcisioqueiroz/Recurrly-app.git
+cd Recurrly-app
+npm install
+npx expo start
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Depois, escaneie o QR code com o Expo Go ou pressione `a` (Android) ou `i` (iOS) no terminal.
 
-## Join the community
+## 👨‍💻 Autor
 
-Join our community of developers creating universal apps.
+Feito por **Tarcisio Queiroz**, desenvolvedor mobile com React Native.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tarc%C3%ADsio-queiroz-568348257)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/tarcisioqueiroz)
